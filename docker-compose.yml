@@ -1,0 +1,13 @@
+#  Run `docker-compose build` to build the images
+#  Run `docker-compose up` to run the containers
+#  Run `docker-compose down` to remove the containers
+
+version: '3.5'
+
+services:
+  api:
+    build: . # specify the directory of the Dockerfile
+    volumes:
+      - .:/app
+    ports:
+      - ${PORT}:${PORT} #specify ports forwarding
